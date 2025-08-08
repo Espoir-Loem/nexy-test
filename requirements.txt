@@ -1,0 +1,3 @@
+nexy
+python-dotenv
+jinja2
