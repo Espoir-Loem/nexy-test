@@ -1,12 +1,19 @@
 {
   "version": 2,
   "builds": [
-    { "src": "nexyconfig.py", "use": "@vercel/python" }
+    {
+      "src": "nexyconfig.py",
+      "use": "@vercel/python"
+    }
   ],
   "routes": [
-    { "src": "/public/(.*)", "dest": "/public/$1" },
-    { "src": "/(.*)", "dest": "nexyconfig.py" }
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "nexyconfig.py"
+    }
   ]
 }
-
-
