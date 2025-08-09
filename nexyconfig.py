@@ -1,5 +1,5 @@
 from nexy import Nexy
-from mangum import Mangum
+# from mangum import Mangum
 
 app = Nexy()
-handler = Mangum(app)
+# handler = Mangum(app)
