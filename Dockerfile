@@ -12,4 +12,4 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the web service on container startup.
-CMD ["hypercorn", "nexyconfig:app", "--bind", "::"]
+CMD ["hypercorn", "nexyconfig:app", "--bind", "0.0.0.0:$PORT"]
