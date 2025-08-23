@@ -1,5 +1,3 @@
-
-
 from nexy import Component
 from components.LinkCard import LinkCard
 from components.Badge import Badge
