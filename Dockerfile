@@ -1,15 +1,15 @@
-# Use the Python 3 alpine official image
-# https://hub.docker.com/_/python
+
 FROM python:3-alpine
 
-# Create and change to the app directory.
-WORKDIR /nexy_app
 
-# Copy local code to the container image.
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN python -m venv .venv && . .venv/bin/activate
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
 COPY . .
+EXPOSE 3000
 
-# Install project dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Run the web service on container startup.
-CMD ["hypercorn", "nexyconfig:app", "--bind", "0.0.0.0:$PORT"]
+CMD ["nexy", "serve", "--host", "0.0.0.0"]
