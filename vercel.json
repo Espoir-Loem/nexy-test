@@ -1,19 +1,7 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "nexyconfig.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/**": {
+      "excludeFiles": "{.next,.git,node_modules,.venv,__pycache__}/**"
     }
-  ],
-  "routes": [
-    {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "nexyconfig.py"
-    }
-  ]
+  }
 }

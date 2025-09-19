@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Projet Default g�n�r� avec Nexy CLI",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "pip-i:prod": "python3 -m venv .venv && source .venv/bin/activate && python3 -m pip install nexy",
+    "nexy:prod": "source .venv/bin/activate && nexy serve",
+    "nexy:dev": "nexy serve",
+    "serve": "pnpm nexy:prod",
+    "dev": "pnpm nexy:dev"
+  }
+}
