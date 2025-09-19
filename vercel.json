@@ -1,7 +1,15 @@
 {
-  "f": {
-    "app/**": {
-      "excludeFiles": "{.next,.git,node_modules,.venv,__pycache__}/**"
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.py",
+      "use": "@vercel/python"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "nexyconfig.py"
+    }
+  ]
 }
