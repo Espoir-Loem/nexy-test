@@ -1,13 +1,12 @@
 
-FROM python:3-alpine
+FROM python:3-slim
 
 
 WORKDIR /app
 
 COPY requirements.txt .
 
-RUN python -m venv .venv && . .venv/bin/activate
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip3 install --upgrade pip3 && pip3 install -r requirements.txt
 
 COPY . .
 EXPOSE 3000
