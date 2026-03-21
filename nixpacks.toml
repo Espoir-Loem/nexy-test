@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["python311", "nodejs_20", "gcc", "uv"]
+
+[phases.install]
+cmds = ["uv sync --frozen", "npm install"]
+
+[phases.build]
+cmds = ["uv run nexy build"] 
+
+[start]
+cmd = "uv run nexy start"
