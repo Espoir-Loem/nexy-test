@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl && \
 WORKDIR /app
 
 COPY pyproject.toml  package*.json ./
-RUN uv sync --frozen
+RUN uv sync 
 
 RUN npm ci 
 
