@@ -1,5 +1,4 @@
-pnpm-lock.yaml
-uv.lock
+
 __nexy__/
 node_modules/
 .venv/
