@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl && \
 
 WORKDIR /app
 
-COPY pyproject.toml uv.lock package*.json ./
+COPY pyproject.toml  package*.json ./
 RUN uv sync --frozen
 
 RUN npm ci 
