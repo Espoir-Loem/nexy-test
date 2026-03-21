@@ -13,7 +13,7 @@ WORKDIR /app
 COPY pyproject.toml  package*.json ./
 RUN uv sync 
 
-RUN npm ci 
+RUN npm i
 
 COPY . .
 
