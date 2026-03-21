@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl && \
 WORKDIR /app
 
 COPY pyproject.toml package*.json ./
-RUN uv sync --frozen --no-dev && npm ci --omit=dev
+RUN uv sync  && npm i
 
 COPY . .
 RUN uv run nexy build
