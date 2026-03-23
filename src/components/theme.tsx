@@ -3,13 +3,20 @@ import { useState, useRef, useLayoutEffect, useEffect, ReactNode } from 'react';
 type ThemeMode = 'light' | 'dark' | 'system';
 
 const Theme = () => {
+    // Initialisation sécurisée pour le SSG
     const [active, setActive] = useState<ThemeMode>(() => {
-        return (localStorage.getItem('nexy-theme') as ThemeMode) || 'system';
+        if (typeof window !== 'undefined') {
+            return (localStorage.getItem('nexy-theme') as ThemeMode) || 'system';
+        }
+        return 'system'; 
     });
 
     const containerRef = useRef<HTMLDivElement>(null);
 
+    // Gestion du thème (Appliquer les classes et sauvegarder)
     useEffect(() => {
+        if (typeof window === 'undefined') return;
+
         const root = document.documentElement;
         localStorage.setItem('nexy-theme', active);
 
@@ -29,7 +36,11 @@ const Theme = () => {
         }
     }, [active]);
 
+    // Mesure du slider : useLayoutEffect peut causer des warnings en SSR/SSG
+    // On utilise useEffect ou on vérifie window pour éviter les erreurs de mesure
     useLayoutEffect(() => {
+        if (typeof window === 'undefined') return;
+
         const activeElement = containerRef.current?.querySelector(`[data-mode="${active}"]`) as HTMLElement;
         if (activeElement) {
             const root = document.documentElement;
@@ -41,10 +52,10 @@ const Theme = () => {
     return (
         <div
             ref={containerRef}
-            className=" relative flex justify-center items-center  p-1 gap-0.5 border border-border rounded-full size-fit transition-colors"
+            className="relative flex justify-center items-center p-1 gap-0.5 border border-border rounded-full size-fit transition-colors"
         >
             <div
-                className="absolute  left-0 size-7 bg-foreground  rounded-full transition-all duration-300 ease-in-out"
+                className="absolute left-0 size-7 bg-foreground rounded-full transition-all duration-300 ease-in-out"
                 style={{
                     transform: `translateX(var(--slider-left))`,
                     width: `var(--slider-width)`
@@ -58,13 +69,15 @@ const Theme = () => {
     );
 };
 
+// ... (ThemeButton et les Icônes restent identiques)
+
 type ThemeButtonType = {
     mode: ThemeMode;
     active: ThemeMode;
     onClick: () => void;
     icon: ReactNode;
 }
-const ThemeButton = ({ mode, active, onClick, icon }: ThemeButtonType) => (
+export const ThemeButton = ({ mode, active, onClick, icon }: ThemeButtonType) => (
     <button
         data-mode={mode}
         onClick={onClick}

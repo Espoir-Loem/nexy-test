@@ -22,5 +22,5 @@
       "@nexy/*": ["./__nexy__/src/*"]
     }
   },
-  "include": ["src", "vite.config.ts", "__nexy__/src"]
+  "include": ["src", "vite.config.ts", "__nexy__/src", "__nexy__/scripts/ssg.ts"]
 }
