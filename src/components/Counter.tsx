@@ -1,4 +1,5 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
+import { toast } from "sonner"
 
 type PropsType = {
   children: ReactNode;
@@ -16,6 +17,16 @@ function Button(props: PropsType) {
 }
 export default function Counter() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    if(count%10===0)
+    toast("Event has been created", {
+          description: "Sunday, December 03, 2023 at 9:00 AM",
+          action: {
+            label: "Undo",
+            onClick: () => console.log("Undo"),
+          },
+        })
+  }, [count])
 
   return (
     <div className=" flex justify-end rounded-xl p-4 border border-white/40 hover:rounded-2xl hover:border-dashed hover:bg-[hsl(193,46%,29%)]/5 transition-all duration-300 ">

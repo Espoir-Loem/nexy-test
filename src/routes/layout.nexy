@@ -1,6 +1,7 @@
 ---
 from "@/components/header.nexy" import Header
 from "@/components/footer.nexy" import Footer
+from "@/components/ui/sonner.tsx" import Toaster  
 from nexy import Vite
 
 children:prop[NexyElement]
@@ -16,6 +17,7 @@ children:prop[NexyElement]
 </head>
 
 <body class="  antialiased ">
+    {#<Toaster />#}
     <Header />
     <main class="lg:px-20 ">
         {{children | safe}}

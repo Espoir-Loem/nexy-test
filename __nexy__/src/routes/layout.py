@@ -8,9 +8,10 @@ NexyElement = Union[callable, __JinjaTemplate]
 def Layout(children: NexyElement = None) -> str:
         from __nexy__.src.components.header import Header
     from __nexy__.src.components.footer import Footer
+    Toaster = __Import(path='src/components/ui/sonner.tsx', framework='react', symbol='Toaster')
     from nexy import Vite
     
-    context = {"Footer": Footer, "Header": Header, "Vite": Vite, "children": children}
+    context = {"Footer": Footer, "Header": Header, "Toaster": Toaster, "Vite": Vite, "children": children}
     rendered = str(__Template().render("__nexy__//src/routes/layout.html", context))
     styles = """"""
     return rendered + styles
