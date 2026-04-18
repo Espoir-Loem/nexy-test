@@ -1,6 +1,6 @@
 {
   "__nexy__/main.ts": {
-    "file": "assets/main-B9DjPO5s.js",
+    "file": "assets/main-DLNGIzC2.js",
     "name": "main",
     "src": "__nexy__/main.ts",
     "isEntry": true,
@@ -11,58 +11,58 @@
       "src/components/ui/button.tsx",
       "src/components/ui/sonner.tsx",
       "src/lib/utils.ts",
-      "_react-DBAxJDMZ.js",
+      "_react-DzIPZ0X2.js",
       "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
       "node_modules/.pnpm/vue@3.5.30_typescript@5.9.3/node_modules/vue/dist/vue.runtime.esm-bundler.js"
     ],
     "css": [
-      "assets/main-Hn1ptXGj.css"
+      "assets/main-CrAZJPrI.css"
     ],
     "assets": [
       "assets/Geist-VariableFont_wght-C2BNBXFg.ttf",
       "assets/Inter-VariableFont_opsz_wght-c8O0ljhh.ttf"
     ]
   },
-  "_dist-CxPbCYL1.js": {
-    "file": "assets/dist-CxPbCYL1.js",
+  "_dist-CkDTIosz.js": {
+    "file": "assets/dist-CkDTIosz.js",
     "name": "dist",
     "imports": [
       "__nexy__/main.ts",
-      "_react-dom-DGAtOS2d.js",
-      "_react-DBAxJDMZ.js"
+      "_react-dom-DyzEd--c.js",
+      "_react-DzIPZ0X2.js"
     ]
   },
-  "_jsx-runtime-CTejsMvi.js": {
-    "file": "assets/jsx-runtime-CTejsMvi.js",
+  "_jsx-runtime-CPcOPmEs.js": {
+    "file": "assets/jsx-runtime-CPcOPmEs.js",
     "name": "jsx-runtime",
     "imports": [
       "__nexy__/main.ts"
     ]
   },
-  "_react-DBAxJDMZ.js": {
-    "file": "assets/react-DBAxJDMZ.js",
+  "_react-DzIPZ0X2.js": {
+    "file": "assets/react-DzIPZ0X2.js",
     "name": "react",
     "imports": [
       "__nexy__/main.ts"
     ]
   },
-  "_react-dom-DGAtOS2d.js": {
-    "file": "assets/react-dom-DGAtOS2d.js",
+  "_react-dom-DyzEd--c.js": {
+    "file": "assets/react-dom-DyzEd--c.js",
     "name": "react-dom",
     "imports": [
       "__nexy__/main.ts",
-      "_react-DBAxJDMZ.js"
+      "_react-DzIPZ0X2.js"
     ]
   },
   "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js": {
-    "file": "assets/client-8AIXU6lu.js",
+    "file": "assets/client-BcRWev05.js",
     "name": "client",
     "src": "node_modules/.pnpm/react-dom@19.2.4_react@19.2.4/node_modules/react-dom/client.js",
     "isDynamicEntry": true,
     "imports": [
       "__nexy__/main.ts",
-      "_react-dom-DGAtOS2d.js",
-      "_react-DBAxJDMZ.js"
+      "_react-dom-DyzEd--c.js",
+      "_react-DzIPZ0X2.js"
     ]
   },
   "node_modules/.pnpm/vue@3.5.30_typescript@5.9.3/node_modules/vue/dist/vue.runtime.esm-bundler.js": {
@@ -80,60 +80,60 @@
     "src": "public/fonts/Inter/Inter-VariableFont_opsz,wght.ttf"
   },
   "src/components/card.tsx": {
-    "file": "assets/card-DARS93XA.js",
+    "file": "assets/card-CXOVMp-x.js",
     "name": "card",
     "src": "src/components/card.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_jsx-runtime-CTejsMvi.js",
+      "_jsx-runtime-CPcOPmEs.js",
       "src/components/counter.tsx"
     ]
   },
   "src/components/counter.tsx": {
-    "file": "assets/counter-DbRa_8o8.js",
+    "file": "assets/counter-RVTxpguG.js",
     "name": "counter",
     "src": "src/components/counter.tsx",
     "isDynamicEntry": true,
     "imports": [
       "__nexy__/main.ts",
-      "_jsx-runtime-CTejsMvi.js",
-      "_react-DBAxJDMZ.js",
-      "_dist-CxPbCYL1.js"
+      "_jsx-runtime-CPcOPmEs.js",
+      "_react-DzIPZ0X2.js",
+      "_dist-CkDTIosz.js"
     ]
   },
   "src/components/theme.tsx": {
-    "file": "assets/theme-B7eXbD81.js",
+    "file": "assets/theme-ChiYvPEZ.js",
     "name": "theme",
     "src": "src/components/theme.tsx",
     "isDynamicEntry": true,
     "imports": [
       "__nexy__/main.ts",
-      "_jsx-runtime-CTejsMvi.js",
-      "_react-DBAxJDMZ.js"
+      "_jsx-runtime-CPcOPmEs.js",
+      "_react-DzIPZ0X2.js"
     ]
   },
   "src/components/ui/button.tsx": {
-    "file": "assets/button-B2YO0Jo2.js",
+    "file": "assets/button-smHp-z2c.js",
     "name": "button",
     "src": "src/components/ui/button.tsx",
     "isDynamicEntry": true,
     "imports": [
       "__nexy__/main.ts",
       "src/lib/utils.ts",
-      "_jsx-runtime-CTejsMvi.js",
-      "_react-DBAxJDMZ.js"
+      "_jsx-runtime-CPcOPmEs.js",
+      "_react-DzIPZ0X2.js"
     ]
   },
   "src/components/ui/sonner.tsx": {
-    "file": "assets/sonner-94QgIxN4.js",
+    "file": "assets/sonner-BmZXBupC.js",
     "name": "sonner",
     "src": "src/components/ui/sonner.tsx",
     "isDynamicEntry": true,
     "imports": [
       "__nexy__/main.ts",
-      "_jsx-runtime-CTejsMvi.js",
-      "_react-DBAxJDMZ.js",
-      "_dist-CxPbCYL1.js"
+      "_jsx-runtime-CPcOPmEs.js",
+      "_react-DzIPZ0X2.js",
+      "_dist-CkDTIosz.js"
     ]
   },
   "src/lib/utils.ts": {
