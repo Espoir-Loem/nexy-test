@@ -1,9 +1,11 @@
 ---
+import os
 items = [
         {"label":"showcase","href":"#"},
         {"label":"Docs","href":"#"},
         {"label":"Community","href":"#"}
     ]
+vercel = os.environ.get("VERCEL")
 ---
 
 <header
@@ -11,12 +13,13 @@ items = [
     <menu class=" flex justify-between items-center gap-6 w-full w-container ">
         <nav class="flex items-center gap-4">
             <figure class="dark:hue-rotate-140 dark:invert">
-                <img src="/public/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
+                {%if not vercel%}
+                    <img src="/public/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
+                {%else%}
+                    <img src="/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
+                {%endif%}
             </figure>
-            <figure class="dark:hue-rotate-140 dark:invert">
-                <img src="/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
-            </figure>
-            
+
             <div class='border-r-2 rounded-2xl border-border w-0 h-2 hidden md:block'></div>
             <ul class="md:flex gap-4 hidden "> 
                 {% for item in items %}
