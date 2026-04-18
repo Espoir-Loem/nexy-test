@@ -1,4 +1,4 @@
 from fastapi import FastAPI
-from  nexy.app import app as Server
+from nexy.routers.app import _server 
 
-app : FastAPI = Server
+app = _server
