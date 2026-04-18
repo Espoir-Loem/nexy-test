@@ -1,5 +1,5 @@
 # --- Étape 1 : Builder ---
-FROM python:3.11-slim-bookworm AS builder
+FROM python:3.12-slim-bookworm AS builder
 
 # Installation de uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
@@ -14,7 +14,7 @@ COPY pyproject.toml uv.lock ./
 RUN uv sync 
 
 # --- Étape 2 : Runtime ---
-FROM python:3.11-slim-bookworm
+FROM python:3.12-slim-bookworm
 
 WORKDIR /app
 
