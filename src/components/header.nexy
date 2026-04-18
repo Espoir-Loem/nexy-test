@@ -12,6 +12,7 @@ items = [
         <nav class="flex items-center gap-4">
             <figure class="dark:hue-rotate-140 dark:invert">
                 <img src="/public/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
+                <img src="/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
             </figure>
             <div class='border-r-2 rounded-2xl border-border w-0 h-2 hidden md:block'></div>
             <ul class="md:flex gap-4 hidden "> 
