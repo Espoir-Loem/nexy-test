@@ -1,47 +1,35 @@
-# Utilisation de Debian Bookworm pour plus de stabilité sur les dépendances système
+# --- Étape 1 : Builder ---
 FROM python:3.11-slim-bookworm AS builder
 
-# Installation de UV
+# Installation de uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
-
-# Optimisation de l'installation des dépendances système
-# On sépare pour mieux gérer le cache et éviter la saturation RAM
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    ca-certificates \
-    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y --no-install-recommends nodejs \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Stratégie de mise en cache UV & NPM
-COPY pyproject.toml package*.json ./
-RUN uv sync  && npm i
+# Copie des fichiers de définition (optimisation cache)
+COPY pyproject.toml uv.lock ./
 
-# Build de l'application
-COPY . .
-RUN uv run nexy build
+# Installation des dépendances dans un venv
+# --no-install-project permet d'installer les libs sans le code source pour le cache
+RUN uv sync 
 
-# --- Stage Final ---
+# --- Étape 2 : Runtime ---
 FROM python:3.11-slim-bookworm
 
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
-
 WORKDIR /app
 
-# Récupération stricte du nécessaire
+# Récupération du venv et des binaires depuis le builder
 COPY --from=builder /app/.venv /app/.venv
-COPY --from=builder /app/__nexy__ /app/__nexy__
-# On ne copie que les fichiers nécessaires à l'exécution, pas tout le contexte
-COPY pyproject.toml ./ 
 
+# Copie du code source et des fichiers nécessaires
+COPY . .
+
+# Configuration de l'environnement
 ENV PATH="/app/.venv/bin:$PATH" \
     PYTHONUNBUFFERED=1 \
     UV_PYTHON_DOWNLOADS=never
 
 EXPOSE 3000
 
-# Utilisation directe du venv pour de meilleures performances au démarrage
+# Exécution
 CMD ["nexy", "start"]

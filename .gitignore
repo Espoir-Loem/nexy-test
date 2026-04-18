@@ -13,6 +13,5 @@ node_modules
 .vercel
 .env*.local
 
-__nexy__/
 node_modules/
 .venv/
