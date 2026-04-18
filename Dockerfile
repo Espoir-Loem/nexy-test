@@ -17,9 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # Stratégie de mise en cache UV & NPM
-COPY pyproject.toml uv.lock package*.json ./
-RUN uv sync --frozen --no-install-project \
-    && npm ci
+COPY pyproject.toml package*.json ./
+RUN uv sync  && npm i
 
 # Build de l'application
 COPY . .
