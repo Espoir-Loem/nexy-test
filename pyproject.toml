@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "nexy==2.0.0",
+    "nexy==2.0.1",
 ]
 
 
