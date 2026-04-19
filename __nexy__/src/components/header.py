@@ -8,9 +8,9 @@ NexyElement = Union[callable, __JinjaTemplate]
 def Header() -> str:
         import os
     items = [{'label': 'showcase', 'href': '#'}, {'label': 'Docs', 'href': '#'}, {'label': 'Community', 'href': '#'}]
-    vercel = os.environ.get('VERCEL')
+    image = '' if os.environ.get('VERCEL') else 'public'
     
-    context = {"items": items, "os": os, "vercel": vercel}
+    context = {"image": image, "items": items, "os": os}
     rendered = str(__Template().render("__nexy__//src/components/header.html", context))
     styles = """"""
     return rendered + styles

@@ -3,11 +3,7 @@
     <menu class=" flex justify-between items-center gap-6 w-full w-container ">
         <nav class="flex items-center gap-4">
             <figure class="dark:hue-rotate-140 dark:invert">
-                {%if not vercel%}
-                    <img src="/public/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
-                {%else%}
-                    <img src="/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
-                {%endif%}
+                <img src="{{image}}/nexy.svg" alt="Nexy" class="w-20" width="XX" height="YY" >
             </figure>
 
             <div class='border-r-2 rounded-2xl border-border w-0 h-2 hidden md:block'></div>
